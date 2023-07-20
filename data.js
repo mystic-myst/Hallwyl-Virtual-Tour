@@ -54,7 +54,7 @@ var APP_DATA = {
           "pitch": -0.292140749826757,
           "title": "Johanna Kempe",
           "picture": 'pics/wil_mom.jpg',
-          "text": "Portrait of Wilhelmina von Hallwyl´s mother."
+          "text": "Portrait of Wilhelmina von Hallwyl´s mother. She was married to the wood patterner and wholesaler Wilhelm Kempe (1807–1883), who founded Ljusne-Woxna AB ."
         },
         {
           "yaw": -1.5077429991391185,
