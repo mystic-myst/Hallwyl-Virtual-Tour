@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Mr+Dafoe&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Roboto:wght@300;400;500&display=swap');
+
+
+
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .background {
@@ -13,7 +17,8 @@ body {
   background-image: url('tiles/8-the-porcelain-room/preview.jpg');
   background-size: cover;
   filter: blur(8px);
-  animation: zoomBackground 30s linear infinite; /* Double the time to accommodate both images */
+  animation: zoomBackground 30s linear infinite;
+  z-index: -1; /* Set lower z-index for the background */
 }
 
 @keyframes zoomBackground {
@@ -21,29 +26,58 @@ body {
     background-size: 100%;
   }
   50% {
-    background-image: url('tiles/8-the-porcelain-room/preview.jpg'); /* First image */
+    background-image: url('tiles/8-the-porcelain-room/preview.jpg');
     background-size: 120%;
   }
   100%, 150% {
-    background-image: url('tiles/7-the-billiard-room/preview.jpg'); /* Replace with the URL of the second image */
+    background-image: url('tiles/7-the-billiard-room/preview.jpg');
     background-size: 120%;
   }
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensure the container is at least the viewport height */
+  padding-bottom: 100px; /* Adjust the padding to make space for the button-container */
+}
 
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 20px;
+  
+}
+
+
+.intro {
+  font-size: 25px;
+  font-family:'Poppins', sans-serif;
+  font-weight: 500;
+  color: rgb(5, 9, 8);
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+   
+}
 
 .button-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for button-container */
+  padding: 10px 0;
   text-align: center;
+  z-index: 1; /* Set higher z-index to place container above the background */
 }
 
 .animated-button {
   display: inline-block;
   padding: 20px 40px;
-  background-color: #3498db;
+  background-color: #3934db;
   color: #fff;
   font-size: 24px;
   border-radius: 10px;
@@ -56,17 +90,15 @@ body {
 }
 
 .link-text {
-  color: #fff;
   font-size: 18px;
   margin-top: 10px;
 }
 
-@keyframes moveBackground {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
 .link-text {
+  background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
   font-weight: bold;
-  font-size:20px ;
+  font-size: 20px;
 }
