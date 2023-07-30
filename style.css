@@ -6,20 +6,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: #f9f3e6;
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('tiles/8-the-porcelain-room/preview.jpg');
-  background-size: cover;
-  filter: blur(8px);
-  animation: zoomBackground 30s linear infinite;
-  z-index: -1; /* Set lower z-index for the background */
-}
+
+
 
 @keyframes zoomBackground {
   0%, 100% {
@@ -35,6 +26,7 @@ body {
   }
 }
 
+
 .container {
   position: relative;
   width: 100%;
@@ -43,32 +35,40 @@ body {
 }
 
 .heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 40px;
+  font-family: 'Playfair Display', 'serif';
+  font-size: 70px;
   text-align: center;
-  text-decoration: underline;
   padding-top: 20px;
+  color: #4c2c1d;
   
 }
 
+.center{
+  text-align: center;
+}
+
+.about-info{
+  font-size: 75px;
+}
 
 .intro {
   font-size: 25px;
   font-family:'Poppins', sans-serif;
   font-weight: 500;
-  color: rgb(5, 9, 8);
+  color: #002147;
   padding-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 130px;
+  padding-right: 130px;
+  text-align: justify;
    
 }
 
 .button-container {
-  position: sticky;
+  position:sticky;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for button-container */
+  background-color:#001f3f; /* Semi-transparent background for button-container */
   padding: 10px 0;
   text-align: center;
   z-index: 1; /* Set higher z-index to place container above the background */
@@ -77,9 +77,9 @@ body {
 .animated-button {
   display: inline-block;
   padding: 20px 40px;
-  background-color: #3934db;
-  color: #fff;
-  font-size: 24px;
+  background-color: #d4af37;
+  color: #4c2c1d;
+  font-size: 28px;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -90,8 +90,9 @@ body {
 }
 
 .link-text {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 10px;
+  font-weight: bolder;
 }
 
 .link-text {
@@ -101,4 +102,49 @@ body {
             -webkit-background-clip: text;
   font-weight: bold;
   font-size: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: 20px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-item .image-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 33, 71, 0.8);
+  color: #fff;
+  padding: 8px 16px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.image-item:hover img {
+  transform: scale(1.1);
+}
+
+.image-item:hover .image-title {
+  opacity: 1;
+  transform: translateY(0);
 }
